@@ -196,7 +196,7 @@ nav h1 a {
 .inside #map-container {
   background: blue none repeat scroll 0 0;
   height: 300px;
-  width: 50%;
+  width: 100%;
 }
 .inside #map {
   background-color: #ccc;
