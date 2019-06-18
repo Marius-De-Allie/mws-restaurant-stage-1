@@ -274,6 +274,8 @@ nav h1 a {
 @media screen and (min-width: 800px) {
 	#restaurant-container, #reviews-container {
 		width: 800px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
 @media screen and (min-width: 1260px) {
