@@ -40,7 +40,6 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   min-height: 100%;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 }
 #footer {
   background-color: #444;
