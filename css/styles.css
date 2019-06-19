@@ -278,7 +278,7 @@ nav h1 a {
   color: #666;
 }
 @media screen and (min-width: 900px) {
-	#restaurant-maincontent, #breadcrumb-container {
+.inside #restaurant-maincontent, .inside #breadcrumb-container {
 		width: 900px;
 		margin-left: auto;
 		margin-right: auto;
