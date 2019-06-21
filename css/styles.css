@@ -273,13 +273,6 @@ nav h1 a {
 #restaurant-hours td {
   color: #666;
 }
-@media screen and (min-width: 900px) {
-.inside #restaurant-maincontent, .inside #breadcrumb-container {
-		width: 900px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-}
 @media screen and (min-width: 1260px) {
 	#maincontent {
 		max-width: 1260px;
