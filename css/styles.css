@@ -207,11 +207,6 @@ nav h1 a {
   height: 100%;
   width: 100%;
 }
-.inside #footer {
-  bottom: 0;
-  position: absolute;
-  width: 100%;
-}
 #restaurant-name {
   color: #f18200;
   font-family: Arial,sans-serif;
