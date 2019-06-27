@@ -16,7 +16,22 @@ self.addEventListener('install', function(e) {
 self.addEventListener('fetch', function(e) {
   e.respondWith(
       caches.match(e.request).then(function(response) {
-
+        // check if request url already present in 'cache1'
+        if(response) { //if response yes (match was found)
+          return response; // then return request from 'cache1'.
+        }
+        else { //if resource requested not yet in cache1 then fetch resource.
+          return fetch(e.request).then(function(response) {
+            const responseClone = response.clone();
+            caches.open('cache1').then(function(cache) {
+              cache.put(e.request, responseClone);
+            })
+            return response;
+          })
+          .catch(function(err) {
+            console.error(err);
+          });
+        }
       })
   );
 });
