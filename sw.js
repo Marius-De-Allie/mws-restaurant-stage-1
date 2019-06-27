@@ -8,6 +8,6 @@ console.log('serviceWorker registered!');
 // Event listener that listens for install event completion on the service worker.
 self.addEventListener('install', function(e) {
   e.waitUntil(
-
+    caches.open('cache1')
   );
 });
