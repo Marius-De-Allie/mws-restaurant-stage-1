@@ -192,7 +192,7 @@ createRestaurantHTML = (restaurant) => {
     const restUrl = DBhelper.imageUrlForRestaurant(restaurant);
     window.location = restUrl;
   }
-  li.append(more)
+  div.append(more)
 
   return li
 }
