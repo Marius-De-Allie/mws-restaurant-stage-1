@@ -164,13 +164,12 @@ createRestaurantHTML = (restaurant) => {
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
-
   // Create new div to hold restaurant text info.
   const div = document.createElement('div');
   div.className = 'restaurant-text-container';
   li.append(div);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   li.append(name);
 
