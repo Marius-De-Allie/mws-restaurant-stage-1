@@ -169,9 +169,10 @@ createRestaurantHTML = (restaurant) => {
   div.className = 'restaurant-text-container';
   li.append(div);
 
+  // Create new h2 element to hold restaurant name.
   const name = document.createElement('h2');
-  name.innerHTML = restaurant.name;
-  li.append(name);
+  name.innerHTML = restaurant.name;  // append restaurant name h2 element to
+  div.append(name);                 // restaurant-text-container div
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
