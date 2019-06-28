@@ -4,7 +4,6 @@ const cacheFiles = ['/', '/index.html', '/restaurant.html', '/css/styles.css',
 , '/img/5.jpg', '/img/6.jpg', '/img/7.jpg', '/img/8.jpg', '/img/9.jpg',
 '/img/10.jpg'
 ];
-console.log('serviceWorker registered!');
 // Event listener that listens for install event completion on the service worker.
 self.addEventListener('install', function(e) {
   e.waitUntil(
