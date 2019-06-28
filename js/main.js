@@ -189,7 +189,7 @@ createRestaurantHTML = (restaurant) => {
   more.innerHTML = 'View Details';
   // Set onclick property for more 'View Details' button element.
   more.onclick = function() {
-    const restUrl = DBHelper.imageUrlForRestaurant(restaurant);
+    const restUrl = DBHelper.urlForRestaurant(restaurant);
     window.location = restUrl;
   }
   div.append(more)
