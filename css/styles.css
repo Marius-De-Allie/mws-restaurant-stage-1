@@ -289,8 +289,3 @@ nav h1 a {
 		margin-right: auto;
 	}
 }
-@media screen and (max-width: 443px) {
-	#restaurants-list {
-		padding-top: 70px;
-	}
-}
