@@ -64,6 +64,7 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
   cuisines.forEach(cuisine => {
     const option = document.createElement('option');
     option.innerHTML = cuisine;
+    option.setAttribute('role', 'menuitem');
     option.value = cuisine;
     select.append(option);
   });
