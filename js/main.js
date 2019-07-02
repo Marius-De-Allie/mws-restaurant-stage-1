@@ -195,7 +195,7 @@ createRestaurantHTML = (restaurant) => {
     const restUrl = DBHelper.urlForRestaurant(restaurant);
     window.location = restUrl;
   }
-  div.append(more)
+  article.append(more)
 
   return li
 }
