@@ -167,7 +167,7 @@ createRestaurantHTML = (restaurant) => {
   li.append(image);
 
   // Create new article element to hold restaurant text info.
-  const article = document.createElement('div');
+  const article = document.createElement('article');
   div.className = 'restaurant-text-container';
   li.append(div);
 
