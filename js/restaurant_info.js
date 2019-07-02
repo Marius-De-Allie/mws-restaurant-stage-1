@@ -1,13 +1,11 @@
 let restaurant;
 var newMap;
-
 /**
  * Initialize map as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
   initMap();
 });
-
 /**
  * Initialize leaflet map
  */
@@ -34,22 +32,6 @@ initMap = () => {
     }
   });
 }
-
-/* window.initMap = () => {
-  fetchRestaurantFromURL((error, restaurant) => {
-    if (error) { // Got an error!
-      console.error(error);
-    } else {
-      self.map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 16,
-        center: restaurant.latlng,
-        scrollwheel: false
-      });
-      fillBreadcrumb();
-      DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
-    }
-  });
-} */
 
 /**
  * Get current restaurant from page URL.
@@ -82,18 +64,17 @@ fetchRestaurantFromURL = (callback) => {
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
-
+  // Add restaurant address to DOM.
   const address = document.getElementById('restaurant-address');
   address.innerHTML = restaurant.address;
-
+  // Add restaurant image to DOM.
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.setAttribute('alt', restaurant.name);
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-
+  // Add restaurant cuisine info to DOM.
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
-
   // fill operating hours
   if (restaurant.operating_hours) {
     fillRestaurantHoursHTML();
@@ -109,15 +90,15 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
   const hours = document.getElementById('restaurant-hours');
   for (let key in operatingHours) {
     const row = document.createElement('tr');
-
+    // Add restaurant days open to DOM.
     const day = document.createElement('td');
     day.innerHTML = key;
     row.appendChild(day);
-
+    // Add restaurant operating hours to DOM.
     const time = document.createElement('td');
     time.innerHTML = operatingHours[key];
     row.appendChild(time);
-
+    // Append restaurant operating hours details.
     hours.appendChild(row);
   }
 }
@@ -130,7 +111,6 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const title = document.createElement('h2');
   title.innerHTML = 'Reviews';
   container.appendChild(title);
-
   if (!reviews) {
     const noReviews = document.createElement('p');
     noReviews.innerHTML = 'No reviews yet!';
@@ -152,19 +132,18 @@ createReviewHTML = (review) => {
   const name = document.createElement('p');
   name.innerHTML = review.name;
   li.appendChild(name);
-
+  // Add restaurant review date info to DOM.
   const date = document.createElement('p');
   date.innerHTML = review.date;
   li.appendChild(date);
-
+  // Add restaurant review rating to DOM.
   const rating = document.createElement('p');
   rating.innerHTML = `Rating: ${review.rating}`;
   li.appendChild(rating);
-
+  // Add restaurant review comments to DOM.
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
   li.appendChild(comments);
-
   return li;
 }
 
