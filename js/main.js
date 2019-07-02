@@ -179,7 +179,7 @@ createRestaurantHTML = (restaurant) => {
   // Create new p element to hold restaurant neighborhood info.
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
-  div.append(neighborhood);
+  article.append(neighborhood);
 
   // Create new p element to hold restaurant address.
   const address = document.createElement('p');
