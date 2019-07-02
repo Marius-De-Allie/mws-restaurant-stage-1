@@ -168,7 +168,7 @@ createRestaurantHTML = (restaurant) => {
 
   // Create new article element to hold restaurant text info.
   const article = document.createElement('article');
-  div.className = 'restaurant-text-container';
+  article.className = 'restaurant-text-container';
   li.append(div);
 
   // Create new h2 element to hold restaurant name.
