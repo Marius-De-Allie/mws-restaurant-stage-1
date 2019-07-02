@@ -189,7 +189,7 @@ createRestaurantHTML = (restaurant) => {
   // Create new button element for more details on restaurant.
   const more = document.createElement('button');
   more.innerHTML = 'View Details';
-  more.setAttribute('aria-label', 'View restaurant details');
+  more.setAttribute('aria-label', `${restaurant.name} details`);
   // Set onclick property for more 'View Details' button element.
   more.onclick = function() {
     const restUrl = DBHelper.urlForRestaurant(restaurant);
