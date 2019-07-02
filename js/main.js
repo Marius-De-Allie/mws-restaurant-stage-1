@@ -184,7 +184,7 @@ createRestaurantHTML = (restaurant) => {
   // Create new p element to hold restaurant address.
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
-  div.append(address);
+  article.append(address);
 
   // Create new button element for more details on restaurant.
   const more = document.createElement('button');
