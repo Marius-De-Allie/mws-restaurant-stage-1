@@ -3,7 +3,6 @@ let restaurants,
   cuisines
 var newMap
 var markers = []
-
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
@@ -90,18 +89,6 @@ initMap = () => {
 
   updateRestaurants();
 }
-/* window.initMap = () => {
-  let loc = {
-    lat: 40.722216,
-    lng: -73.987501
-  };
-  self.map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: loc,
-    scrollwheel: false
-  });
-  updateRestaurants();
-} */
 
 /**
  * Update page and map for current restaurants.
@@ -134,7 +121,6 @@ resetRestaurants = (restaurants) => {
   self.restaurants = [];
   const ul = document.getElementById('restaurants-list');
   ul.innerHTML = '';
-
   // Remove all map markers
   if (self.markers) {
     self.markers.forEach(marker => marker.remove());
@@ -159,33 +145,27 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
-
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.setAttribute('alt', restaurant.name);
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
-
   // Create new article element to hold restaurant text info.
   const article = document.createElement('article');
   article.className = 'restaurant-text-container';
   li.append(article);
-
   // Create new h2 element to hold restaurant name.
   const name = document.createElement('h2');
   name.innerHTML = restaurant.name;  // append restaurant name h2 element to
   article.append(name);                 // restaurant-text-container element
-
   // Create new p element to hold restaurant neighborhood info.
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
   article.append(neighborhood);
-
   // Create new p element to hold restaurant address.
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
   article.append(address);
-
   // Create new button element for more details on restaurant.
   const more = document.createElement('button');
   more.innerHTML = 'View Details';
@@ -215,22 +195,14 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 
 }
-/* addMarkersToMap = (restaurants = self.restaurants) => {
-  restaurants.forEach(restaurant => {
-    // Add marker to the map
-    const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.map);
-    google.maps.event.addListener(marker, 'click', () => {
-      window.location.href = marker.url
-    });
-    self.markers.push(marker);
-  });
-} */
+
 /**
  *
  * Service Worker.
  *
 **/
-if(navigator.serviceWorker) {
+if(navigator.serviceWorker) { //Check browser for service worker compatability
+  // Register service worker
   navigator.serviceWorker.register('/sw.js').catch(function(err) {
     console.error(err);
   });
