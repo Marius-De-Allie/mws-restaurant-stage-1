@@ -147,7 +147,7 @@ createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
   const image = document.createElement('img');
   image.className = 'restaurant-img';
-  image.setAttribute('alt', restaurant.name);
+  image.setAttribute('alt', `An image of ${restaurant.name} restaurant in ${restaurant.neighborhood}`);
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
   // Create new article element to hold restaurant text info.
